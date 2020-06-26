@@ -1,7 +1,9 @@
-/**
- * 该文件定义状态对应的初始化数据
- */
+import eventBus from '../lib/event-bus'
 
 export default {
-  val1: 'hi',
+  val: 'hi',
+  setVal(val) {
+    this.val = val;
+    eventBus.forceUpdate();
+  },
 }

@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import eventBus from './lib/event-bus';
 import './index.css';
 import { App } from './views';
 // import * as serviceWorker from './serviceWorker';
-import { emitter } from './states';
-// import { getState } from './states';
 
 const rootDom = document.getElementById('root');
 function renderView() {
@@ -18,7 +17,7 @@ function renderView() {
   );
 }
 
-emitter.onUpdate(renderView);
+eventBus.onUpdate(renderView);
 renderView();
 
 // If you want your app to work offline and load faster, you can change

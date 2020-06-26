@@ -1,14 +1,12 @@
-import state, { emitter } from '../states';
+import { greet } from '../states'
 
 class GreetService {
   changeGreet() {
-    state.greet.val1 = 'hello';
-    emitter.forceUpdate();
+    greet.setVal('just a test');
   }
-  
-  changeGreet2(val) {
-    state.greet.val2 = val;
-    emitter.forceUpdate();
+
+  clear() {
+    greet.setVal('');
   }
 }
 

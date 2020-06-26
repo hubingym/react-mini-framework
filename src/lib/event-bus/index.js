@@ -1,7 +1,7 @@
 import EventEmitter from 'events';
 import { EVENT_FORCE_UPDATE } from './constants';
 
-class Emitter extends EventEmitter {
+class EventBus extends EventEmitter {
   // constructor() {
   //   super();
   // }
@@ -23,4 +23,4 @@ class Emitter extends EventEmitter {
   }
 }
 
-export default new Emitter();
+export default new EventBus();
