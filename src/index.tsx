@@ -6,7 +6,7 @@ import { App } from './views';
 // import * as serviceWorker from './serviceWorker';
 
 const rootDom = document.getElementById('root');
-function renderView() {
+function renderView(): void {
   // 打印全部数据,用于调试
   // console.log(getState());
   ReactDOM.render(

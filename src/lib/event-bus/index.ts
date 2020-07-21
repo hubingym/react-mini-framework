@@ -1,16 +1,35 @@
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
 import { EVENT_FORCE_UPDATE } from './constants';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+class Event {
+  constructor(private bus: EventBus, private msg: string) {
+  }
+
+  emitEvent() {
+    this.bus.emit(this.msg);
+  }
+
+  onEvent(cb: () => void) {
+    this.bus.on(this.msg, cb);
+  }
+
+  offEvent(cb: () => void) {
+    this.bus.off(this.msg, cb);
+  }
+}
 
 class EventBus extends EventEmitter {
   // constructor() {
   //   super();
   // }
 
+  // public event1 = new Event(this, 'event1');
+
   /**
    * 注册更新视图的回调
-   * @param {Function} cb 
    */
-  onUpdate(cb) {
+  onUpdate(cb: () => void) {
     this.on(EVENT_FORCE_UPDATE, cb);
   }
 
